@@ -1,0 +1,15 @@
+﻿"must": [
+  {
+    "multi_match": {
+      "query": "term",
+      "lenient": true,
+      "operator": "or",
+      "fields": [
+        "bar",
+        "attachment.content",
+        "attachment.author",
+        "attachment.keywords"
+      ]
+    }
+  }
+]

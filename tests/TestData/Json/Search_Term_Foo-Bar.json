@@ -1,0 +1,32 @@
+﻿"must": [
+  {
+    "multi_match": {
+      "query": "foo bar",
+      "lenient": true,
+      "operator": "or",
+      "fields": [
+        "bar",
+        "attachment.content",
+        "attachment.author",
+        "attachment.keywords"
+      ]
+    }
+  }
+], 
+"should": [
+  {
+    "multi_match": {
+      "query": "foo bar",
+      "lenient": true,
+      "operator": "or",
+      "type": "phrase",
+      "boost": 2,
+      "fields": [
+        "bar",
+        "attachment.content",
+        "attachment.author",
+        "attachment.keywords"
+      ]
+    }
+  }
+]
